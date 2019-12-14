@@ -1,5 +1,6 @@
 import React from 'react';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
+import BurgerControls from './BurgerControls/BurgerControls';
 import classes from './Burger.module.css';
 
 const burger = (props) => {
@@ -24,6 +25,7 @@ const burger = (props) => {
       <BurgerIngredient type="bread-top" />
       {transformedIngredients}
       <BurgerIngredient type="bread-bottom" />
+      <BurgerControls />
     </div>
   );
 };
