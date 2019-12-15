@@ -13,7 +13,15 @@ const burgerControls = (props) => {
   return (
     <div className={classes.BuilderControls}>
       {controls.map((control) => {
-        return <BurgerControl key={control.label} label={control.label} />;
+        return (
+          <BurgerControl
+            ingredientAdded={props.ingredientAdded.bind(this, control.type)}
+            ingredientRemoved={props.ingredientRemoved.bind(this, control.type)}
+            shouldDisable={props.disableInfo[control.type]}
+            key={control.label}
+            label={control.label}
+          />
+        );
       })}
     </div>
   );

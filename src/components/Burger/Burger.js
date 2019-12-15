@@ -25,7 +25,11 @@ const burger = (props) => {
       <BurgerIngredient type="bread-top" />
       {transformedIngredients}
       <BurgerIngredient type="bread-bottom" />
-      <BurgerControls />
+      <BurgerControls
+        ingredientAdded={props.ingredientAdded}
+        ingredientRemoved={props.ingredientRemoved}
+        disableInfo={props.disableInfo}
+      />
     </div>
   );
 };
