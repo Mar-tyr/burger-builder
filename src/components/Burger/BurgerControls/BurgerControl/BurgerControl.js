@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from './BurgerControl.module.css';
+import PropTypes from 'prop-types';
 
-const buildControl = (props) => {
+const BuildControl = (props) => {
   return (
     <div className={classes.BuildControl}>
       <div className={classes.Label}>{props.label}</div>
@@ -19,4 +20,11 @@ const buildControl = (props) => {
   );
 };
 
-export default buildControl;
+BuildControl.propTypes = {
+  label: PropTypes.string,
+  shouldDisable: PropTypes.bool,
+  ingredientRemoved: PropTypes.func,
+  ingredientAdded: PropTypes.func,
+};
+
+export default BuildControl;

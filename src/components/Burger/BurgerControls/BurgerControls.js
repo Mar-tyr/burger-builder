@@ -1,6 +1,7 @@
 import React from 'react';
 import BurgerControl from './BurgerControl/BurgerControl';
 import classes from './BurgerControls.module.css';
+import PropTypes from 'prop-types';
 
 const controls = [
   { label: 'Salad', type: 'salad' },
@@ -9,7 +10,7 @@ const controls = [
   { label: 'Meat', type: 'meat' },
 ];
 
-const burgerControls = (props) => {
+const BurgerControls = (props) => {
   return (
     <div className={classes.BuilderControls}>
       <p>
@@ -37,4 +38,13 @@ const burgerControls = (props) => {
   );
 };
 
-export default burgerControls;
+BurgerControls.propTypes = {
+  ingredientAdded: PropTypes.func,
+  ingredientRemoved: PropTypes.func,
+  disableInfo: PropTypes.object,
+  purchasable: PropTypes.bool,
+  price: PropTypes.number,
+  ordered: PropTypes.func,
+};
+
+export default BurgerControls;

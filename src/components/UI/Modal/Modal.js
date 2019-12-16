@@ -2,8 +2,9 @@ import React from 'react';
 import Aux from '../../../hoc/Auxiliary';
 import classes from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop';
+import PropsType from 'prop-types';
 
-const modal = (props) => {
+const Modal = (props) => {
   return (
     <Aux>
       <Backdrop show={props.show} clicked={props.modalClosed} />
@@ -20,4 +21,9 @@ const modal = (props) => {
   );
 };
 
-export default modal;
+Modal.propsType = {
+  show: PropsType.bool.isRequired,
+  modalClosed: PropsType.func,
+};
+
+export default Modal;

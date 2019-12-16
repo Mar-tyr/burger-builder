@@ -1,6 +1,7 @@
 import React from 'react';
 import Aux from '../../../hoc/Auxiliary';
 import Button from '../../UI/Button/Button';
+import PropTypes from 'prop-types';
 
 const OrderSummary = (props) => {
   const ingredientSummary = Object.keys(props.ingredients).map((ingredient) => (
@@ -27,6 +28,13 @@ const OrderSummary = (props) => {
       </Button>
     </Aux>
   );
+};
+
+OrderSummary.propTypes = {
+  ingredients: PropTypes.object.isRequired,
+  purchaseContinued: PropTypes.func,
+  purchaseCanceled: PropTypes.func,
+  price: PropTypes.number,
 };
 
 export default OrderSummary;
