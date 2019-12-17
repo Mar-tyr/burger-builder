@@ -4,15 +4,8 @@ import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 const withErrorHandler = (WrappedComponent, axios) => {
   return class extends Component {
-    state = {
-      error: null,
-    };
-
-    errorConfirmedHandler = () => {
-      this.setState({ error: null });
-    };
-
-    componentDidMount() {
+    constructor(props) {
+      super(props);
       axios.interceptors.request.use((request) => {
         this.setState({ error: null });
         return request;
@@ -24,6 +17,14 @@ const withErrorHandler = (WrappedComponent, axios) => {
         }
       );
     }
+
+    state = {
+      error: null,
+    };
+
+    errorConfirmedHandler = () => {
+      this.setState({ error: null });
+    };
 
     render() {
       return (
